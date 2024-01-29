@@ -23,16 +23,25 @@ let billNum = 0;
 let price;
 let totPrice = 0;
 
-function addToCart(event) {
+/*function addToCart(event) {
     let dishList = document.createElement('li');
     dishList.classList.add('ordered-dish');
 
     let dishName = document.createElement('div');
     dishName.classList.add('dish-name');
-    dishName.textContent = event.target.textContent;
-    console.log(dishName);
+    let nameElement = event.target.querySelector('.name');
+    dishName.textContent = nameElement ? nameElement.textContent.trim() : '';
+
+    console.log(dishName.textContent);
+
+    let orderedDishPrice = document.createElement('span');
+    orderedDishPrice.classList.add('ordered-dish-price');
+    orderedDishPrice.textContent = parseFloat(event.target.querySelector('.dish-price').textContent);
+    console.log(orderedDishPrice.textContent);
+
     allDishes.appendChild(dishList);
     dishList.appendChild(dishName);
+    dishName.appendChild(orderedDishPrice);
     htmlCont = allDishes;
     console.log(htmlCont);
 
@@ -42,7 +51,7 @@ function addToCart(event) {
     console.log(totPrice);
     const totalPrice = document.querySelector(".tot-price");
     totalPrice.textContent = totPrice;
-}
+}*/
 
 function removeFromCart(event) {
     event.target.remove();
