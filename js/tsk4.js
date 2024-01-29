@@ -1,5 +1,5 @@
 const helloBtn = document.querySelector(".hello-btn");
-const helloListener = helloBtn.addEventListener("click", showMes);
+const helloListener = helloBtn.addEventListener("click", showBill);
 const helloText = document.querySelector(".h1");
 const inpText = document.querySelector(".area-for-name");
 const inpListener = inpText.addEventListener("input", showMes);
@@ -7,9 +7,18 @@ const dishes = document.querySelectorAll(".dish");
 dishes.forEach(dish => dish.addEventListener("click", addToCart));
 const allDishes = document.querySelector(".ordered");
 const clBtn = document.querySelector(".clear-btn");
-const clBtnListener = clBtn.addEventListener("click", clearFunc)
+const clBtnListener = clBtn.addEventListener("click", clearFunc);
 
-const defaultName = helloText.textContent;
+allDishes.addEventListener("click", removeFromCart);
+
+let backdrop = document.querySelector(".backdrop");
+let modal = document.querySelector(".modal");
+/*const newD = document.querySelectorAll(".ordered-dish");
+newD.forEach(dish => dish.addEventListener("click", removeFromCart))*/
+
+let defaultName = helloText.textContent;
+let cart = {};
+let htmlCont;
 
 function addToCart(event) {
     let dishList = document.createElement('li');
@@ -21,6 +30,13 @@ function addToCart(event) {
 
     allDishes.appendChild(dishList);
     dishList.appendChild(dishName);
+    htmlCont = allDishes;
+    console.log(htmlCont);
+}
+
+function removeFromCart(event) {
+    event.target.remove();
+    console.log(htmlCont);
 }
 
 function clearFunc(event) {
@@ -31,12 +47,19 @@ function clearFunc(event) {
 }
 
 function showMes(event) {
-    helloText.textContent = "Hello, Dom";
+    defaultName = "Hello, Dom";
     let textValue = event.target.value.trim() || defaultName;
-    helloText.textContent = `Hello, ${textValue}`;
+    defaultName = `Hello, ${textValue}, your order:`;
+    
 }
 
-
+function showBill(event) {
+    backdrop.classList.add('is-open');
+    let billCustomerName = document.createElement('h1');
+    billCustomerName.textContent = defaultName;
+    modal.appendChild(billCustomerName);
+    modal.appendChild(htmlCont);
+}
 /*function clearFunc(event) {
     // Remove the last child element from allDishes
     const lastOrderedDish = allDishes.lastChild;
