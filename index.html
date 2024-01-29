@@ -14,38 +14,47 @@
         <section>
             <div>
                 <h1 class="h1">Hello, <span class="h1-span">Customer</span></h1>
-                <p>Your name</p>
-                <textarea name="" id="" class="area-for-name" placeholder="Type here your name"></textarea>
+                <h2>Your name</h2>
+                <textarea name="" id="" class="area-for-name" placeholder="Type here your name" required></textarea>
                 <h2>The number of your table</h2>
-                <select name="tables" id="table" class="tables">
+                <select name="tables" id="table" class="tables" required>
+                    <option value="" selected disabled></option>
                     <option value="1">Table 1</option>
                     <option value="2">Table 2</option>
                     <option value="3">Table 3</option>
+                    <option value="4">Table 4</option>
+                    <option value="5">Table 5</option>
+                    <option value="6">Table 6</option>
+                    <option value="7">Table 7</option>
+                    <option value="8">Table 8</option>
+                    <option value="9">Table 9</option>
+                    <option value="10">Table 10</option>
                 </select>
                 <h2>Menu:</h2>
                 <ul class="menu">
                     <li class="dish">
-                        <div>Soup</div>
+                        <div>Soup <span class="dish-price">5</span>$</div>
                     </li>
                     <li class="dish">
-                        <div>Bread</div>
+                        <div>Bread <span class="dish-price">1</span>$</div>
                     </li>
                     <li class="dish">
-                        <div>Cheesecake</div>
+                        <div>Cheesecake <span class="dish-price">4</span>$</div>
                     </li>
                     <li class="dish">
-                        <div>Mashed potatoes</div>
+                        <div>Mashed potatoes <span class="dish-price">4.98</span>$</div>
                     </li>
                     <li class="dish">
-                        <div>Brownie</div>
+                        <div>Brownie <span class="dish-price">3.5</span>$</div>
                     </li>
                 </ul>
-                <button type="button" class="hello-btn">Order</button>
+                <button type="submit" class="hello-btn">Order</button>
             </div>
             <div>
                 <p>Your order:</p>
                 <ul class="ordered"></ul>
                 <button type="button" class="clear-btn">clear</button>
+                <h2>Total price: <span class="tot-price"></span></h2>
             </div>
         </section>
     </main>
