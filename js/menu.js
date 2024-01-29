@@ -8,15 +8,14 @@ dishes.forEach(dish => dish.addEventListener("click", addToCart));
 const allDishes = document.querySelector(".ordered");
 const clBtn = document.querySelector(".clear-btn");
 const clBtnListener = clBtn.addEventListener("click", clearFunc);
-
 allDishes.addEventListener("click", removeFromCart);
-
 let backdrop = document.querySelector(".backdrop");
 let modal = document.querySelector(".modal");
 
 let defaultName = helloText.textContent;
 let cart = {};
 let htmlCont;
+let billNum = 0;
 
 function addToCart(event) {
     let dishList = document.createElement('li');
@@ -53,8 +52,9 @@ function showMes(event) {
 function showBill(event) {
     backdrop.classList.add('is-open');
     let billCustomerName = document.createElement('h1');
-    billCustomerName.textContent = defaultName;
+    billCustomerName.textContent = `Hello, ${helloText.textContent}, your order number ${billNum}:`;
     modal.appendChild(billCustomerName);
+    billNum += 1;
 
     try {
         modal.appendChild(htmlCont);
