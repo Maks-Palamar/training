@@ -1,6 +1,6 @@
 const helloBtn = document.querySelector(".hello-btn");
 const helloListener = helloBtn.addEventListener("click", showBill);
-const helloText = document.querySelector(".h1");
+const helloText = document.querySelector(".h1-span");
 const inpText = document.querySelector(".area-for-name");
 const inpListener = inpText.addEventListener("input", showMes);
 const dishes = document.querySelectorAll(".dish");
@@ -13,8 +13,6 @@ allDishes.addEventListener("click", removeFromCart);
 
 let backdrop = document.querySelector(".backdrop");
 let modal = document.querySelector(".modal");
-/*const newD = document.querySelectorAll(".ordered-dish");
-newD.forEach(dish => dish.addEventListener("click", removeFromCart))*/
 
 let defaultName = helloText.textContent;
 let cart = {};
@@ -24,7 +22,7 @@ function addToCart(event) {
     let dishList = document.createElement('li');
     dishList.classList.add('ordered-dish');
 
-    let dishName = document.createElement('p');
+    let dishName = document.createElement('div');
     dishName.classList.add('dish-name');
     dishName.textContent = event.target.textContent;
 
@@ -47,9 +45,8 @@ function clearFunc(event) {
 }
 
 function showMes(event) {
-    defaultName = "Hello, Dom";
     let textValue = event.target.value.trim() || defaultName;
-    defaultName = `Hello, ${textValue}, your order:`;
+    helloText.textContent = `${textValue}`;
     
 }
 
@@ -58,12 +55,10 @@ function showBill(event) {
     let billCustomerName = document.createElement('h1');
     billCustomerName.textContent = defaultName;
     modal.appendChild(billCustomerName);
-    modal.appendChild(htmlCont);
-}
-/*function clearFunc(event) {
-    // Remove the last child element from allDishes
-    const lastOrderedDish = allDishes.lastChild;
-    if (lastOrderedDish) {
-        allDishes.removeChild(lastOrderedDish);
+
+    try {
+        modal.appendChild(htmlCont);
+    } catch (error) {
+        billCustomerName.textContent = `Hello, ${defaultName}, You havent ordered any dishes yet, please return to menu`;
     }
-}*/
+}
