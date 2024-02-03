@@ -4,39 +4,49 @@ const helloText = document.querySelector(".h1-span");
 const inpText = document.querySelector(".area-for-name");
 const inpListener = inpText.addEventListener("input", showMes);
 const dishes = document.querySelectorAll(".dish");
-dishes.forEach(dish => dish.addEventListener("click", addToCart));
+
+const cartBtn = document.querySelectorAll(".addButton");
+/*cartBtn.addEventListener("click", addToCart);*/
+cartBtn.forEach(dish => dish.addEventListener("click", addToCart));
+
 const allDishes = document.querySelector(".ordered");
 const clBtn = document.querySelector(".clear-btn");
 const clBtnListener = clBtn.addEventListener("click", clearFunc);
-allDishes.addEventListener("click", removeFromCart);
+
+/*allDishes.addEventListener("click", removeFromCart);*/
 const backdrop = document.querySelector(".backdrop");
 const modal = document.querySelector(".modal");
 let orderedDishes = allDishes.querySelectorAll('.ordered-dish');
 const selectTable = document.querySelector(".tables");
 const dishPrice = document.querySelector(".dish-price");
+const totalPrice = document.querySelector(".tot-price");
 
 
 let defaultName = helloText.textContent;
 let cart = {};
 let htmlCont;
 let billNum = 0;
-let price;
+//let price;
 let totPrice = 0;
 
-/*function addToCart(event) {
+function addToCart(event) {
+    const target = event.currentTarget;
     let dishList = document.createElement('li');
     dishList.classList.add('ordered-dish');
 
-    let dishName = document.createElement('div');
+    let dishName = document.createElement('h3');
     dishName.classList.add('dish-name');
-    let nameElement = event.target.querySelector('.name');
-    dishName.textContent = nameElement ? nameElement.textContent.trim() : '';
+   /* let nameElement = target.closest('h3');/*target.querySelector('.name');*/
+    /*console.log(nameElement);*/
+    dishName.textContent = event.target.textContent;
 
     console.log(dishName.textContent);
 
-    let orderedDishPrice = document.createElement('span');
+
+
+    let orderedDishPrice = document.createElement('p');
     orderedDishPrice.classList.add('ordered-dish-price');
-    orderedDishPrice.textContent = parseFloat(event.target.querySelector('.dish-price').textContent);
+    let actualPrice = orderedDishPrice.textContent = parseFloat(event.currentTarget.querySelector('.dish-price').textContent);
     console.log(orderedDishPrice.textContent);
 
     allDishes.appendChild(dishList);
@@ -45,19 +55,21 @@ let totPrice = 0;
     htmlCont = allDishes;
     console.log(htmlCont);
 
+    let price = actualPrice || 0;
     
-    price = parseFloat(event.target.querySelector('.dish-price').textContent);
     totPrice += price;
     console.log(totPrice);
-    const totalPrice = document.querySelector(".tot-price");
     totalPrice.textContent = totPrice;
-}*/
+}
 
 function removeFromCart(event) {
     event.target.remove();
     console.log(htmlCont);
-    price = parseFloat(event.target.querySelector('.dish-price').textContent);
+
+    let price = parseFloat(event.currentTarget.querySelector('.ordered-dish-price').textContent) || 0;
+    console.log(price);
     totPrice -= price;
+    totalPrice.textContent = totPrice;
 }
 
 function clearFunc(event) {
