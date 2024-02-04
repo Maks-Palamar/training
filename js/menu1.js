@@ -2,7 +2,7 @@ const helloBtn = document.querySelector(".hello-btn");
 const helloText = document.querySelector(".h1-span");
 const inpText = document.querySelector(".area-for-name");
 const dishes = document.querySelectorAll(".dish");
-const cartBtns = document.querySelectorAll(".addButton"); // pluralize variable name
+const cartBtns = document.querySelectorAll(".addButton");
 const allDishes = document.querySelector(".ordered");
 const clBtn = document.querySelector(".clear-btn");
 const backdrop = document.querySelector(".backdrop");
@@ -11,11 +11,6 @@ const selectTable = document.querySelector(".tables");
 const totalPrice = document.querySelector(".tot-price");
 
 const rmvBtn = document.querySelectorAll(".remove-btn");
-allDishes.addEventListener("click", function(event) {
-    if (event.target.classList.contains("remove-btn")) {
-        removeFromCart(event);
-    }
-});
 
 
 let defaultName = helloText.textContent;
@@ -57,11 +52,8 @@ function addToCart(event) {
 function removeFromCart(event) {
     const orderedDishElement = event.target.closest('.ordered-dish');
 
-    // Check if orderedDishElement is not null before attempting to remove
     if (orderedDishElement) {
         orderedDishElement.remove();
-
-        // Update the total price
         let price = parseFloat(orderedDishElement.querySelector('.ordered-dish-price').textContent) || 0;
         totPrice -= price;
         totalPrice.textContent = totPrice.toFixed(2) + ' $';
@@ -69,15 +61,6 @@ function removeFromCart(event) {
         console.error('Could not find closest .ordered-dish');
     }
 }
-
-/*function clearFunc(event) {
-    allDishes.forEach(orderedDish => {
-        allDishes.removeChild(orderedDish);
-        totPrice = 0;
-        totalPrice.textContent = totPrice.toFixed(2) + ' $';
-        rmvBtn.removeEventListener();
-    });
-}*/
 
 function clearFunc(event) {
         const orderedDish = document.querySelectorAll('.ordered-dish');
@@ -122,3 +105,8 @@ helloBtn.addEventListener("click", showBill);
 inpText.addEventListener("input", showMes);
 cartBtns.forEach(dish => dish.addEventListener("click", addToCart));
 clBtn.addEventListener("click", clearFunc);
+allDishes.addEventListener("click", function(event) {
+    if (event.target.classList.contains("remove-btn")) {
+        removeFromCart(event);
+    }
+});
