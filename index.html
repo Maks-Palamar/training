@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
     <link href="./styles.css" rel="stylesheet"/>
 </head>
 <body>
     <header>
         <div class="container header-container">
             <nav class="header-navigation">
-                <a class="logo" href="./index.html">Web<span>Studio</span></a>
                 <button type="button" class="header-menu-btn">
                     <svg class="header-menu-icon" width="24" height="24">
-                        <use href="./images/icons.svg#icon-heroicons-solid_menu"></use>
+                        <use href="./svg/symbol-defs.svg#icon-navigation-arrow-svgrepo-com"></use>
                     </svg>
                 </button>
+                <a class="logo" href="./index.html">Jasmine<span>Studio</span></a>
             </nav>
         </div>
     </header>
@@ -23,40 +26,42 @@
         <section class="hero section">
             <div class="container hero-container">
                 <h1 class="hero-title">
-                    Effective Solutions<br>for Your Business
+                    All your<br>sweet dreams
                 </h1>
                 <button class="hero-btn" type="button">Order Service</button>
             </div>
         </section>
         <section>
             <div>
-                <h1 class="h1">Hello, <span class="h1-span">Customer</span></h1>
-                <h2>Your name</h2>
-                <textarea name="" id="" class="area-for-name" placeholder="Type here your name" required></textarea>
-                <h2>The number of your table</h2>
-                <select name="tables" id="table" class="tables" required>
-                    <option value="" selected disabled></option>
-                    <option value="1">Table 1</option>
-                    <option value="2">Table 2</option>
-                    <option value="3">Table 3</option>
-                    <option value="4">Table 4</option>
-                    <option value="5">Table 5</option>
-                    <option value="6">Table 6</option>
-                    <option value="7">Table 7</option>
-                    <option value="8">Table 8</option>
-                    <option value="9">Table 9</option>
-                    <option value="10">Table 10</option>
-                </select>
+                <section class="hello-section">
+                    <h1 class="h1">Hello, <span class="h1-span">Customer</span></h1>
+                    <h2>Your name</h2>
+                    <textarea name="" id="" class="area-for-name" placeholder="Type here your name" required></textarea>
+                    <h2>The number of your table</h2>
+                    <select name="tables" id="table" class="tables" required>
+                        <option value="" selected disabled></option>
+                        <option value="1">Table 1</option>
+                        <option value="2">Table 2</option>
+                        <option value="3">Table 3</option>
+                        <option value="4">Table 4</option>
+                        <option value="5">Table 5</option>
+                        <option value="6">Table 6</option>
+                        <option value="7">Table 7</option>
+                        <option value="8">Table 8</option>
+                        <option value="9">Table 9</option>
+                        <option value="10">Table 10</option>
+                    </select>
+                </section>
                 <h2>Menu:</h2>
                 <ul class="menu">
                     <li class="dish">
-                        <h3 class="name">Soup</h3>
+                        <h3 class="name">Cupcakes</h3>
                         <p>Description</p>
                         <p class="dish-price">5 <span>$</span></p>
                         <button type="button" class="addButton">Add to cart</button>
                     </li>
                     <li class="dish">
-                        <h3 class="name">Bread</h3>
+                        <h3 class="name">Strawberrie pie</h3>
                         <p>Description</p>
                         <p class="dish-price">1 <span>$</span></p>
                         <button type="button" class="addButton">Add to cart</button>
@@ -68,7 +73,7 @@
                         <button type="button" class="addButton">Add to cart</button>
                     </li>
                     <li class="dish">
-                        <h3 class="name">Mashed potatoes</h3>
+                        <h3 class="name">Vanilla icecream</h3>
                         <p>Description</p>
                         <p class="dish-price">4.98 <span>$</span></p>
                         <button type="button" class="addButton">Add to cart</button>
