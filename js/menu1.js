@@ -9,9 +9,7 @@ const backdrop = document.querySelector(".backdrop");
 const modal = document.querySelector(".modal");
 const selectTable = document.querySelector(".tables");
 const totalPrice = document.querySelector(".tot-price");
-
 const rmvBtn = document.querySelectorAll(".remove-btn");
-
 
 let defaultName = helloText.textContent;
 let htmlCont;
