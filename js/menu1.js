@@ -104,11 +104,15 @@ function showBill(event) {
     billCustomerName.textContent = `Hello, ${helloText.textContent}, your order number ${billNum}:`;
     modal.appendChild(billCustomerName);
     modal.appendChild(billTable);
+    let billTotalPrice = document.createElement('h2');
+    billTotalPrice.classList.add('.bill-total-price');
+    billTotalPrice.textContent = `Total price: ${totPrice.toFixed(2)}$`;
     
     try {
         const clonedDishes = htmlCont.cloneNode(true);
         clonedDishes.querySelectorAll('.remove-btn').forEach(btn => btn.remove());
         modal.appendChild(clonedDishes);
+        modal.appendChild(billTotalPrice);
     } catch (error) {
         billCustomerName.textContent = `Hello, ${defaultName}, You haven't ordered any dishes yet, please return to the menu`;
     }
