@@ -14,7 +14,7 @@
         <div class="container header-container">
             <nav class="header-navigation">
                 <button type="button" class="header-menu-btn">
-                    <svg class="header-menu-icon" width="24" height="24">
+                    <svg class="header-menu-icon" width="20" height="20">
                         <use href="./svg/symbol-defs.svg#icon-navigation-arrow-svgrepo-com"></use>
                     </svg>
                 </button>
@@ -25,17 +25,28 @@
     <main>
         <section class="hero section">
             <div class="container hero-container">
+                <video id="hero-video" autoplay muted loop>
+                    <source src="./img/video2160p.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
                 <h1 class="hero-title">
                     All your<br>sweet dreams
                 </h1>
-                <button class="hero-btn" type="button">Order Service</button>
+                <button type="button" class="hero-btn">
+                    Menu
+                    <a href="#start-order">
+                        <svg class="hero-icon" width="24" height="24">
+                            <use href="./svg/symbol-defs.svg#icon-navigation-arrow-svgrepo-com"></use>
+                        </svg>
+                    </a>
+                </button>
             </div>
         </section>
         <section>
             <div>
                 <section class="hello-section">
-                    <h1 class="h1">Hello, <span class="h1-span">Customer</span></h1>
-                    <h2>Your name</h2>
+                    <h1 class="h1" id="start-order">Hello, <span class="h1-span">Customer</span></h1>
+                    <h2 id="customer-name">Your name</h2>
                     <textarea name="" id="" class="area-for-name" placeholder="Type here your name" required></textarea>
                     <h2>The number of your table</h2>
                     <select name="tables" id="table" class="tables" required>
@@ -52,40 +63,48 @@
                         <option value="10">Table 10</option>
                     </select>
                 </section>
-                <h2>Menu:</h2>
-                <ul class="menu">
-                    <li class="dish">
-                        <h3 class="name">Cupcakes</h3>
-                        <p>Description</p>
-                        <p class="dish-price">5 <span>$</span></p>
-                        <button type="button" class="addButton">Add to cart</button>
-                    </li>
-                    <li class="dish">
-                        <h3 class="name">Strawberrie pie</h3>
-                        <p>Description</p>
-                        <p class="dish-price">1 <span>$</span></p>
-                        <button type="button" class="addButton">Add to cart</button>
-                    </li>
-                    <li class="dish">
-                        <h3 class="name">Cheesecake</h3>
-                        <p>Description</p>
-                        <p class="dish-price">4 <span>$</span></p>
-                        <button type="button" class="addButton">Add to cart</button>
-                    </li>
-                    <li class="dish">
-                        <h3 class="name">Vanilla icecream</h3>
-                        <p>Description</p>
-                        <p class="dish-price">4.98 <span>$</span></p>
-                        <button type="button" class="addButton">Add to cart</button>
-                    </li>
-                    <li class="dish">
-                        <h3 class="name">Brownie</h3>
-                        <p>Description</p>
-                        <p class="dish-price">4.98 <span>$</span></p>
-                        <button type="button" class="addButton">Add to cart</button>
-                    </li>
-                </ul>
-                <button type="submit" class="hello-btn">Order</button>
+                <section class="menu-section">
+                    <h2 id="menu-title">Menu:</h2>
+                    <ul class="menu">
+                        <li class="dish">
+                            <h3 class="name">Cupcakes</h3>
+                            <p class="dish-descript">Description</p>
+                            <p class="dish-price">5 <span>$</span></p>
+                            <button type="button" class="addButton">Add to cart</button>
+                        </li>
+                        <li class="dish">
+                            <h3 class="name">Strawberrie pie</h3>
+                            <p class="dish-descript">Description</p>
+                            <p class="dish-price">1 <span>$</span></p>
+                            <button type="button" class="addButton">Add to cart</button>
+                        </li>
+                        <li class="dish">
+                            <h3 class="name">Cheesecake</h3>
+                            <p class="dish-descript">Description</p>
+                            <p class="dish-price">4 <span>$</span></p>
+                            <button type="button" class="addButton">Add to cart</button>
+                        </li>
+                        <li class="dish">
+                            <h3 class="name">Vanilla icecream</h3>
+                            <p class="dish-descript">Description</p>
+                            <p class="dish-price">4.98 <span>$</span></p>
+                            <button type="button" class="addButton">Add to cart</button>
+                        </li>
+                        <li class="dish">
+                            <h3 class="name">Brownie</h3>
+                            <p class="dish-descript">Description</p>
+                            <p class="dish-price">4.98 <span>$</span></p>
+                            <button type="button" class="addButton">Add to cart</button>
+                        </li>
+                        <li class="dish">
+                            <h3 class="name">Sparkled doughnats</h3>
+                            <p class="dish-descript">Description</p>
+                            <p class="dish-price">3.50 <span>$</span></p>
+                            <button type="button" class="addButton">Add to cart</button>
+                        </li>
+                    </ul>
+                    <button type="submit" class="hello-btn">Order</button>
+                </section>
             </div>
             <div>
                 <h2>Your order:</h2>
