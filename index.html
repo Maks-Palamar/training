@@ -10,7 +10,7 @@
     <link href="./styles.css" rel="stylesheet"/>
 </head>
 <body>
-    <header>
+    <header class="header">
         <div class="container header-container">
             <nav class="header-navigation">
                 <button type="button" class="header-menu-btn">
@@ -20,6 +20,14 @@
                 </button>
                 <a class="logo" href="./index.html">Jasmine<span>Studio</span></a>
             </nav>
+
+            <div class="header-ordered">
+                <h2>Your order:</h2>
+                <ul class="ordered"></ul>
+                <button type="button" class="clear-btn">clear</button>
+                <h2>Total price: <span class="tot-price"></span></h2>
+                <button type="submit" class="hello-btn">Order</button>
+            </div>
         </div>
     </header>
     <main>
@@ -103,14 +111,7 @@
                             <button type="button" class="addButton">Add to cart</button>
                         </li>
                     </ul>
-                    <button type="submit" class="hello-btn">Order</button>
                 </section>
-            </div>
-            <div>
-                <h2>Your order:</h2>
-                <ul class="ordered"></ul>
-                <button type="button" class="clear-btn">clear</button>
-                <h2>Total price: <span class="tot-price"></span></h2>
             </div>
         </section>
     </main>

@@ -108,3 +108,13 @@ allDishes.addEventListener("click", function(event) {
         removeFromCart(event);
     }
 });
+
+/* */
+
+const headerBtn = document.querySelector('.header-menu-btn');
+const headerIcon = document.querySelector('.header-menu-icon');
+const header = document.querySelector('header');
+headerBtn.addEventListener('click', () => {
+    header.classList.toggle('header-open');
+    headerIcon.classList.toggle('header-menu-icon-open');
+});

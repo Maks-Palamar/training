@@ -106,3 +106,18 @@ function showBill(event) {
     }
     
 }
+
+
+/*------------------ */
+const headerBtn = document.querySelector('.header-menu-btn');
+const header = document.querySelector('header');
+// headerBtn.addEventListener('click', (event) => {
+//     if (header.classList.contains('header-open')) {
+//         header.classList.remove('.header-open');
+//     } else {
+//         header.classList.add('.header-open')
+//     }
+// })
+headerBtn.addEventListener('click', (event) => {
+    header.classList.toggle('header-open');
+});
